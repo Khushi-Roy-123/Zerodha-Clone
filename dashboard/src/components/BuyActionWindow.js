@@ -30,8 +30,35 @@ const BuyActionWindow = ({ uid }) => {
   };
 
   return (
-    <div className="container" id="buy-window" draggable="true" style={{ backgroundColor: mode === "BUY" ? "#4184f3" : "#df514c" }}>
+    <div className={`container ${mode === "BUY" ? "buy-mode" : "sell-mode"}`} draggable="true">
+      <div className="header">
+        <h3>
+          {uid} 
+          <small>NSE</small>
+        </h3>
+        <div className="mode-badge">
+             {/* Mode badge handled by CSS/Container class */}
+        </div>
+      </div>
+
       <div className="regular-order">
+        
+        {/* New Mode Toggle */}
+        <div className="mode-toggle">
+            <span 
+                className={mode === "BUY" ? "active buy" : ""} 
+                onClick={() => setMode("BUY")}
+            >
+                BUY
+            </span>
+            <span 
+                className={mode === "SELL" ? "active sell" : ""} 
+                onClick={() => setMode("SELL")}
+            >
+                SELL
+            </span>
+        </div>
+
         <div className="inputs">
           <fieldset>
             <legend>Qty.</legend>
@@ -39,6 +66,7 @@ const BuyActionWindow = ({ uid }) => {
               type="number"
               name="qty"
               id="qty"
+              min="1"
               onChange={(e) => setStockQuantity(e.target.value)}
               value={stockQuantity}
             />
@@ -50,6 +78,7 @@ const BuyActionWindow = ({ uid }) => {
               name="price"
               id="price"
               step="0.05"
+              min="0"
               onChange={(e) => setStockPrice(e.target.value)}
               value={stockPrice}
             />
@@ -58,21 +87,17 @@ const BuyActionWindow = ({ uid }) => {
       </div>
 
       <div className="buttons">
-        <span>Margin required ₹{(stockQuantity * stockPrice).toFixed(2)}</span>
-        <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-          {/* Toggle Switch */}
-          <div className="switch-container" style={{ cursor: "pointer", background: "white", padding: "5px", borderRadius: "5px" }} onClick={() => setMode(mode === "BUY" ? "SELL" : "BUY")}>
-              <span style={{ fontWeight: "bold", color: mode === "BUY" ? "#4184f3" : "grey" }}>BUY</span>
-              {" / "}
-              <span style={{ fontWeight: "bold", color: mode === "SELL" ? "#df514c" : "grey" }}>SELL</span>
-          </div>
-
-          <Link className="btn btn-blue" onClick={handleBuyClick} style={{ backgroundColor: "white", color: "#333", fontWeight: "bold" }}>
+        <span className="margin-req">
+            Margin required: 
+            <strong>₹{(stockQuantity * stockPrice).toFixed(2)}</strong>
+        </span>
+        <div className="actions">
+          <button className="btn btn-submit" onClick={handleBuyClick}>
             {mode}
-          </Link>
-          <Link to="" className="btn btn-grey" onClick={handleCancelClick} style={{ color: "white" }}>
+          </button>
+          <button className="btn btn-cancel" onClick={handleCancelClick}>
             Cancel
-          </Link>
+          </button>
         </div>
       </div>
     </div>

@@ -9,9 +9,15 @@ const Orders = () => {
     const fetchOrders = async () => {
       try {
         const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/allOrders`, { withCredentials: true });
-        setOrders(res.data);
+        if (Array.isArray(res.data)) {
+            setOrders(res.data);
+        } else {
+            console.log("Orders response is not an array:", res.data);
+            setOrders([]);
+        }
       } catch (err) {
         console.error("Error fetching orders", err);
+        setOrders([]);
       }
     };
     fetchOrders();

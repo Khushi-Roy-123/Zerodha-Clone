@@ -13,10 +13,10 @@ const Funds = () => {
       </div>
 
       <div className="row">
-        <div className="col-lg-6">
-          <div className="section glass-effect">
+        <div className="col">
+          <div className="section glass-card">
             <span>
-              <p><i className="fa-solid fa-wallet me-2"></i> Equity</p>
+              <p>Equity</p>
             </span>
 
             <div className="table">
@@ -45,37 +45,12 @@ const Funds = () => {
                 <p>SPAN</p>
                 <p>0.00</p>
               </div>
-              <div className="data justify-content-between mb-2">
-                <p>Delivery margin</p>
-                <p>0.00</p>
-              </div>
-              <div className="data justify-content-between mb-2">
-                <p>Exposure</p>
-                <p>0.00</p>
-              </div>
-              <div className="data justify-content-between mb-2">
-                <p>Options premium</p>
-                <p>0.00</p>
-              </div>
-              <hr className="my-3"/>
-              <div className="data justify-content-between mb-2">
-                <p>Collateral (Liquid funds)</p>
-                <p>0.00</p>
-              </div>
-              <div className="data justify-content-between mb-2">
-                <p>Collateral (Equity)</p>
-                <p>0.00</p>
-              </div>
-              <div className="data justify-content-between mb-2">
-                <p>Total Collateral</p>
-                <p>0.00</p>
-              </div>
             </div>
           </div>
         </div>
 
-        <div className="col-lg-6">
-          <div className="section glass-effect text-center p-5">
+        <div className="col">
+          <div className="section glass-card text-center p-5">
             <div className="commodity">
               <p className="mb-4 text-muted">You don't have a commodity account</p>
               <Link className="btn btn-blue" style={{ background: "var(--primary-blue)", color: "white", padding: "10px 25px", borderRadius: "4px", textDecoration: "none" }}>Open Account</Link>
@@ -83,6 +58,7 @@ const Funds = () => {
           </div>
         </div>
       </div>
+
     </>
   );
 };

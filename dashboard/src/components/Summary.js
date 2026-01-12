@@ -32,9 +32,9 @@ const Summary = () => {
         <h6>Hi, User!</h6>
       </div>
 
-      <div className="section glass-effect">
+      <div className="section glass-card">
         <span>
-          <p><AccountBalanceWallet style={{ fontSize: '1.2rem', verticalAlign: 'sub', marginRight: '5px' }}/> Equity</p>
+          <p><AccountBalanceWallet className="icon" style={{ fontSize: '1.1rem', marginRight: '8px' }}/> Equity</p>
         </span>
 
         <div className="data">
@@ -45,7 +45,7 @@ const Summary = () => {
 
           <div className="second">
             <p>
-              Margins used <span>0</span>{" "}
+              Margins used <span>0.00</span>{" "}
             </p>
             <p>
               Opening balance <span>3.74k</span>{" "}
@@ -54,15 +54,15 @@ const Summary = () => {
         </div>
       </div>
 
-      <div className="section glass-effect">
+      <div className="section glass-card">
         <span>
-          <p><TrendingUp style={{ fontSize: '1.2rem', verticalAlign: 'sub', marginRight: '5px' }}/> Holdings (13)</p>
+          <p><TrendingUp className="icon" style={{ fontSize: '1.1rem', marginRight: '8px' }}/> Holdings (13)</p>
         </span>
 
         <div className="data">
           <div className="first">
             <h3 className="profit">
-              1.55k <small>+5.20%</small>{" "}
+              1.55k <small style={{ fontSize: '1rem', background: 'var(--buy-green-transparent)', padding: '2px 6px', borderRadius: '4px' }}>+5.20%</small>{" "}
             </h3>
             <p>P&L</p>
           </div>
@@ -78,11 +78,11 @@ const Summary = () => {
         </div>
       </div>
 
-      <div className="section glass-effect">
+      <div className="section glass-card">
          <span>
-            <p><PieChart style={{ fontSize: '1.2rem', verticalAlign: 'sub', marginRight: '5px' }}/> Portfolio</p>
+            <p><PieChart className="icon" style={{ fontSize: '1.1rem', marginRight: '8px' }}/> Portfolio</p>
          </span>
-         <div style={{ maxHeight: '300px', display: 'flex', justifyContent: 'center' }}>
+         <div style={{ maxHeight: '250px', display: 'flex', justifyContent: 'center' }}>
              <DoughnutChart data={data} />
          </div>
       </div>

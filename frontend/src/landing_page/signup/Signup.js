@@ -65,28 +65,30 @@ const Signup = () => {
       justifyContent: "center",
       alignItems: "center",
       height: "100vh",
-      background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)", // Subtle premium gradient
-      fontFamily: "'Inter', sans-serif"
+      background: "#0f1216", 
+      backgroundImage: "radial-gradient(circle at 15% 50%, rgba(47, 128, 237, 0.08) 0%, transparent 25%), radial-gradient(circle at 85% 30%, rgba(112, 93, 242, 0.08) 0%, transparent 25%)",
+      fontFamily: "'Inter', sans-serif",
+      color: "#f0f6fc"
     }}>
       <div className="glass-card" style={{
-        background: "rgba(255, 255, 255, 0.85)",
+        background: "rgba(22, 27, 34, 0.7)",
         backdropFilter: "blur(12px)",
         borderRadius: "16px",
-        boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.15)",
+        boxShadow: "0 4px 24px rgba(0,0,0,0.2)",
         padding: "40px 50px",
         width: "100%",
-        maxWidth: "450px",
-        border: "1px solid rgba(255, 255, 255, 0.18)"
+        maxWidth: "400px",
+        border: "1px solid rgba(255, 255, 255, 0.08)"
       }}>
         <div style={{ textAlign: "center", marginBottom: "30px" }}>
-           <img src="media/images/logo.png" alt="Zerodha" style={{ width: "40px", marginBottom: "15px" }} />
-           <h2 style={{ fontSize: "1.75rem", fontWeight: "700", color: "#333", margin: "0" }}>Create Account</h2>
-           <p style={{ color: "#666", marginTop: "8px", fontSize: "0.95rem" }}>Join Zerodha to start investing today</p>
+           <img src="media/images/logo.png" alt="Zerodha" style={{ width: "40px", marginBottom: "15px", filter: "brightness(0) invert(1)" }} />
+           <h2 style={{ fontSize: "1.75rem", fontWeight: "600", color: "#f0f6fc", margin: "0" }}>Create Account</h2>
+           <p style={{ color: "#8b949e", marginTop: "8px", fontSize: "0.95rem" }}>Join Zerodha to start investing today</p>
         </div>
 
         <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: "20px" }}>
-            <label htmlFor="email" style={{ display: "block", marginBottom: "8px", fontWeight: "500", color: "#444" }}>Email Address</label>
+            <label htmlFor="email" style={{ display: "block", marginBottom: "8px", fontWeight: "500", color: "#8b949e", fontSize: "0.9rem" }}>Email Address</label>
             <input
               type="email"
               name="email"
@@ -97,17 +99,26 @@ const Signup = () => {
                 width: "100%",
                 padding: "12px 16px",
                 borderRadius: "8px",
-                border: "1px solid #e0e0e0",
+                border: "1px solid #30363d",
+                background: "#0d1117",
+                color: "#f0f6fc",
                 fontSize: "1rem",
                 outline: "none",
-                transition: "border-color 0.2s"
+                transition: "all 0.2s",
+                boxSizing: "border-box"
               }}
-              onFocus={(e) => e.target.style.borderColor = "#387ed1"}
-              onBlur={(e) => e.target.style.borderColor = "#e0e0e0"}
+              onFocus={(e) => {
+                  e.target.style.borderColor = "#387ed1";
+                  e.target.style.boxShadow = "0 0 0 2px rgba(56, 126, 209, 0.2)";
+              }}
+              onBlur={(e) => {
+                  e.target.style.borderColor = "#30363d";
+                  e.target.style.boxShadow = "none";
+              }}
             />
           </div>
           <div style={{ marginBottom: "20px" }}>
-            <label htmlFor="username" style={{ display: "block", marginBottom: "8px", fontWeight: "500", color: "#444" }}>Username</label>
+            <label htmlFor="username" style={{ display: "block", marginBottom: "8px", fontWeight: "500", color: "#8b949e", fontSize: "0.9rem" }}>Username</label>
             <input
               type="text"
               name="username"
@@ -118,17 +129,26 @@ const Signup = () => {
                 width: "100%",
                 padding: "12px 16px",
                 borderRadius: "8px",
-                border: "1px solid #e0e0e0",
+                border: "1px solid #30363d",
+                background: "#0d1117",
+                color: "#f0f6fc",
                 fontSize: "1rem",
                 outline: "none",
-                transition: "border-color 0.2s"
+                transition: "all 0.2s",
+                boxSizing: "border-box"
               }}
-              onFocus={(e) => e.target.style.borderColor = "#387ed1"}
-              onBlur={(e) => e.target.style.borderColor = "#e0e0e0"}
+              onFocus={(e) => {
+                  e.target.style.borderColor = "#387ed1";
+                  e.target.style.boxShadow = "0 0 0 2px rgba(56, 126, 209, 0.2)";
+              }}
+              onBlur={(e) => {
+                  e.target.style.borderColor = "#30363d";
+                  e.target.style.boxShadow = "none";
+              }}
             />
           </div>
           <div style={{ marginBottom: "30px" }}>
-            <label htmlFor="password" style={{ display: "block", marginBottom: "8px", fontWeight: "500", color: "#444" }}>Password</label>
+            <label htmlFor="password" style={{ display: "block", marginBottom: "8px", fontWeight: "500", color: "#8b949e", fontSize: "0.9rem" }}>Password</label>
             <input
               type="password"
               name="password"
@@ -139,27 +159,36 @@ const Signup = () => {
                 width: "100%",
                 padding: "12px 16px",
                 borderRadius: "8px",
-                border: "1px solid #e0e0e0",
+                border: "1px solid #30363d",
+                background: "#0d1117",
+                color: "#f0f6fc",
                 fontSize: "1rem",
                 outline: "none",
-                transition: "border-color 0.2s"
+                transition: "all 0.2s",
+                boxSizing: "border-box"
               }}
-              onFocus={(e) => e.target.style.borderColor = "#387ed1"}
-              onBlur={(e) => e.target.style.borderColor = "#e0e0e0"}
+              onFocus={(e) => {
+                  e.target.style.borderColor = "#387ed1";
+                  e.target.style.boxShadow = "0 0 0 2px rgba(56, 126, 209, 0.2)";
+              }}
+              onBlur={(e) => {
+                  e.target.style.borderColor = "#30363d";
+                  e.target.style.boxShadow = "none";
+              }}
             />
           </div>
           
           <button type="submit" style={{
             width: "100%",
-            padding: "14px",
-            background: "linear-gradient(135deg, #387ed1 0%, #2b6cb0 100%)",
+            padding: "12px",
+            background: "linear-gradient(135deg, #2f80ed 0%, #705df2 100%)",
             color: "white",
             border: "none",
             borderRadius: "8px",
-            fontSize: "1.05rem",
+            fontSize: "1rem",
             fontWeight: "600",
             cursor: "pointer",
-            boxShadow: "0 4px 12px rgba(56, 126, 209, 0.25)",
+            boxShadow: "0 4px 12px rgba(47, 128, 237, 0.3)",
             transition: "transform 0.2s"
           }}
           onMouseOver={(e) => e.target.style.transform = "translateY(-1px)"}
@@ -168,11 +197,11 @@ const Signup = () => {
             Sign Up
           </button>
           
-          <div style={{ marginTop: "25px", textAlign: "center", fontSize: "0.95rem", color: "#666" }}>
-            Already have an account? <Link to={"/login"} style={{ color: "#387ed1", fontWeight: "600", textDecoration: "none" }}>Log in</Link>
+          <div style={{ marginTop: "25px", textAlign: "center", fontSize: "0.9rem", color: "#8b949e" }}>
+            Already have an account? <Link to={"/login"} style={{ color: "#387ed1", fontWeight: "500", textDecoration: "none" }}>Log in</Link>
           </div>
         </form>
-        <ToastContainer />
+        <ToastContainer theme="dark" />
       </div>
     </div>
   );

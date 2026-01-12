@@ -134,13 +134,13 @@ const WatchListItem = ({ stock }) => {
   return (
     <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div className="item">
-        <p className={stock.isDown ? "down" : "up"}>{stock.name}</p>
+        <p className={stock.isDown ? "isDown" : "isUp"}>{stock.name}</p>
         <div className="itemInfo">
           <span className="percent">{stock.percent}</span>
           {stock.isDown ? (
-            <KeyboardArrowDown className="down" />
+            <KeyboardArrowDown className="isDown" />
           ) : (
-            <KeyboardArrowUp className="down" /> // Fixed logic here, if ISNOT down, it should be Up arrow but className was down which is red. Let's fix class too? Actually "down" class is red, "up" is green.
+            <KeyboardArrowUp className="isUp" />
           )}
           <span className="price">{stock.price}</span>
         </div>
@@ -159,15 +159,23 @@ const WatchListActions = ({ uid }) => {
 
   return (
     <span className="actions">
-      <span>
+      <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
         <Tooltip
           title="Buy (B)"
           placement="top"
           arrow
           TransitionComponent={Grow}
-          onClick={handleBuyClick}
         >
-          <button className="buy">Buy</button>
+          <button className="buy" onClick={handleBuyClick} style={{ 
+              background: "#4184f3", 
+              color: "white", 
+              border: "none", 
+              borderRadius: "4px", 
+              padding: "4px 12px", 
+              fontWeight: "600",
+              cursor: "pointer",
+              transition: "transform 0.1s"
+          }}>B</button>
         </Tooltip>
         <Tooltip
           title="Sell (S)"
@@ -175,7 +183,16 @@ const WatchListActions = ({ uid }) => {
           arrow
           TransitionComponent={Grow}
         >
-          <button className="sell">Sell</button>
+          <button className="sell" style={{ 
+              background: "#ff5722", 
+              color: "white", 
+              border: "none", 
+              borderRadius: "4px", 
+              padding: "4px 12px", 
+              fontWeight: "600",
+              cursor: "pointer",
+              transition: "transform 0.1s"
+          }}>S</button>
         </Tooltip>
         <Tooltip
           title="Analytics (A)"
@@ -183,12 +200,12 @@ const WatchListActions = ({ uid }) => {
           arrow
           TransitionComponent={Grow}
         >
-          <button className="action">
+          <button className="action" style={{ background: "transparent", border: "none", cursor: "pointer", color: "var(--text-muted)" }}>
             <BarChartOutlined className="icon" />
           </button>
         </Tooltip>
         <Tooltip title="More" placement="top" arrow TransitionComponent={Grow}>
-          <button className="action">
+          <button className="action" style={{ background: "transparent", border: "none", cursor: "pointer", color: "var(--text-muted)" }}>
             <MoreHoriz className="icon" />
           </button>
         </Tooltip>

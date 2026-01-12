@@ -29,41 +29,36 @@ const Menu = () => {
     <div className="menu-container">
       {/* Desktop Menu */}
       <div className="menus desktop-only">
-        <ul>
+      <ul>
           <li>
-            <Link style={{ textDecoration: "none" }} to="/">
-              <p className={location.pathname === "/" ? activeMenuClass : menuClass}>Dashboard</p>
+            <Link style={{ textDecoration: "none" }} to="/" className={location.pathname === "/" ? activeMenuClass : menuClass}>
+              Dashboard
             </Link>
           </li>
           <li>
-            <Link style={{ textDecoration: "none" }} to="/orders">
-              <p className={location.pathname === "/orders" ? activeMenuClass : menuClass}>Orders</p>
+            <Link style={{ textDecoration: "none" }} to="/orders" className={location.pathname === "/orders" ? activeMenuClass : menuClass}>
+              Orders
             </Link>
           </li>
           <li>
-            <Link style={{ textDecoration: "none" }} to="/holdings">
-              <p className={location.pathname === "/holdings" ? activeMenuClass : menuClass}>Holdings</p>
+            <Link style={{ textDecoration: "none" }} to="/holdings" className={location.pathname === "/holdings" ? activeMenuClass : menuClass}>
+              Holdings
             </Link>
           </li>
           <li>
-            <Link style={{ textDecoration: "none" }} to="/positions">
-              <p className={location.pathname === "/positions" ? activeMenuClass : menuClass}>Positions</p>
+            <Link style={{ textDecoration: "none" }} to="/positions" className={location.pathname === "/positions" ? activeMenuClass : menuClass}>
+              Positions
             </Link>
           </li>
           <li>
-            <Link style={{ textDecoration: "none" }} to="/funds">
-              <p className={location.pathname === "/funds" ? activeMenuClass : menuClass}>Funds</p>
+            <Link style={{ textDecoration: "none" }} to="/funds" className={location.pathname === "/funds" ? activeMenuClass : menuClass}>
+              Funds
             </Link>
           </li>
           <li>
-            <Link style={{ textDecoration: "none" }} to="/apps">
-              <p className={location.pathname === "/apps" ? activeMenuClass : menuClass}>Apps</p>
+            <Link style={{ textDecoration: "none" }} to="/apps" className={location.pathname === "/apps" ? activeMenuClass : menuClass}>
+              Apps
             </Link>
-          </li>
-          <li>
-            <a style={{ textDecoration: "none" }} href={`${process.env.REACT_APP_FRONTEND_URL}/signup`}>
-              <p className={menuClass}>Signup</p>
-            </a>
           </li>
         </ul>
         <hr className="divider" />

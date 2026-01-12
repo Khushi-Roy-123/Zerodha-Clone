@@ -43,8 +43,11 @@ const TopBar = () => {
               <p className="index">NIFTY 50</p>
               <p className="index-points">{indices.nifty.value}</p>
               <p className="percent">
-                 <span style={{ color: indices.nifty.percent >= 0 ? "var(--buy-green)" : "var(--sell-red)" }}>
-                    {indices.nifty.percent}% {indices.nifty.percent >= 0 ? "▲" : "▼"}
+                 <span style={{ 
+                    color: indices.nifty.percent >= 0 ? "var(--buy-green)" : "var(--sell-red)",
+                    background: indices.nifty.percent >= 0 ? "var(--buy-green-transparent)" : "var(--sell-red-transparent)"
+                 }}>
+                    {indices.nifty.percent}%
                  </span>
               </p>
             </div>
@@ -52,8 +55,11 @@ const TopBar = () => {
               <p className="index">SENSEX</p>
               <p className="index-points">{indices.sensex.value}</p>
               <p className="percent">
-                 <span style={{ color: indices.sensex.percent >= 0 ? "var(--buy-green)" : "var(--sell-red)" }}>
-                    {indices.sensex.percent >= 0 ? "▲" : "▼"}
+                 <span style={{ 
+                    color: indices.sensex.percent >= 0 ? "var(--buy-green)" : "var(--sell-red)",
+                    background: indices.sensex.percent >= 0 ? "var(--buy-green-transparent)" : "var(--sell-red-transparent)"
+                 }}>
+                    {indices.sensex.percent}%
                  </span>
               </p>
             </div>
