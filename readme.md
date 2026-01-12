@@ -102,6 +102,26 @@ The project is organized into three main micro-services/folders:
 
 ---
 
+## 📸 Screenshots
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+### Orders
+
+![Orders](screenshots/orders.png)
+
+### Holdings
+
+![Holdings](screenshots/holdings.png)
+
+### Funds
+
+![Funds](screenshots/funds.png)
+
+---
+
 ## 🌐 Deployment
 
 The project includes a `render.yaml` blueprint for one-click deployment on **Render**, orchestrating all three services seamlessly.
