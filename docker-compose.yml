@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3002:3002"
+    environment:
+      - PORT=3002
+      - MONGO_URL=mongodb://mongo:27017/zerodha
+      - TOKEN_KEY=SuperSecretKeyForZerodhaClone123
+    depends_on:
+      - mongo
+    networks:
+      - zerodha-network
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - zerodha-network
+
+  dashboard:
+    build: ./dashboard
+    ports:
+      - "3001:80"
+    depends_on:
+      - backend
+    networks:
+      - zerodha-network
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - zerodha-network
+
+networks:
+  zerodha-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
